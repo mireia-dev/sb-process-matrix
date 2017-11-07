@@ -9,11 +9,10 @@ class DeliverablesService {
     }
 
     fetchAll() {
-
-        return this.$timeout(300)
-            .then(() => {
-                return dummyData;
-            });
+      return this.$timeout(300)
+        .then(() => {
+            return dummyData;
+        });
     }
 
     changeTaskProgress(task, newProgress) {
@@ -32,7 +31,7 @@ class DeliverablesService {
 
 DeliverablesService.$inject = ['$timeout', '$q'];
 
-export {DeliverablesService}
+export { DeliverablesService }
 
 var dummyData = [{
     "id": "0206baa0-da64-4062-f971-ffbba0e9f589",

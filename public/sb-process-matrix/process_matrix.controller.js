@@ -6,7 +6,7 @@ class ProcessMatrixController {
   constructor () {
     console.log('ProcessMatrixController');
   }
-
+  
   /**
    * input bindings are ready
    *

@@ -1,19 +1,23 @@
-<md-card>
+  <md-card ng-repeat="deliverable in $ctrl.sbModel">
 
-  <md-card-title class="less-blue">
-    <div layout="column">
-      <h3>Material Design process visualization ...</h3>
-      <p>Content: 50 deliverables all having the same process with 8 steps</p>
-    </div>
-  </md-card-title>
+    <md-card-title class="title-viewer">
+      <div layout="column">
+        <h3>{{ deliverable.name }}</h3>
+      </div>
+    </md-card-title>
 
-  <md-card-content layout="row" layout-align="space-between">
+    <md-card-content layout="row" layout-align="space-between">
 
-    <div ng-repeat="deliverable in $ctrl.sbModel">
-       :: ->> {{deliverable.name}}
-    </div>
+      <section layout="row" layout-align="center center">
+        <md-button class="md-raised" ng-repeat="activity in deliverable.activities"  ng-class="{'btn-todo': activity.progress == '0' , 'btn-inprogress': activity.progress == '1', 'btn-done': activity.progress == '2'}" onclick="changeProgress()">
+          {{ activity.name }}
+        </md-button>
+      </section>
 
-  </md-card-content>
+    </md-card-content>
 
-</md-card>
+  </md-card>
 
+<!--<div ng-repeat="activity in deliverable.activities">
+        <h3>{{ activity.name }}</h3>
+      </div>-->

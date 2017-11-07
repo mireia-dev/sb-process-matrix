@@ -1,7 +1,7 @@
-import componentTemplate from './process_matrix.html'
-import componentStyle from './process_matrix.less'
+import componentTemplate from './process_matrix.html';
+import componentStyle from './process_matrix.less';
 
-import {ProcessMatrixController} from './process_matrix.controller.js'
+import {ProcessMatrixController} from './process_matrix.controller.js';
 
 const bindings = {
   sbModel: '<',
