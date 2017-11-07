@@ -15,6 +15,10 @@ class ProcessMatrixController {
   $onInit () {
     console.log('input bindings are defined!', this.sbModel);
   }
+
+  function changeProgress() {
+    
+  }
 }
 
 export { ProcessMatrixController }
