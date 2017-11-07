@@ -1,22 +1,28 @@
-  <md-card ng-repeat="deliverable in $ctrl.sbModel">
+<header class="header-viewer">
+  <h1>PROCESS VIEWER - Sablono</h1>
+</header>
 
-    <md-card-title class="title-viewer">
-      <div layout="column">
-        <h3>{{ deliverable.name }}</h3>
-      </div>
-    </md-card-title>
+<md-card ng-repeat="deliverable in $ctrl.sbModel">
 
-    <md-card-content layout="row" layout-align="space-between">
+  <md-card-title class="title-viewer">
+    <div layout="column">
+      <h3>{{ deliverable.name }}</h3>
+    </div>
+  </md-card-title>
 
-      <section layout="row" layout-align="center center">
-        <md-button class="md-raised" ng-repeat="activity in deliverable.activities | orderBy:'step'" ng-class="{'btn-todo': activity.progress == '0' , 'btn-inprogress': activity.progress == '1', 'btn-done': activity.progress == '2'}">
-          {{ activity.name }}
-        </md-button>
-      </section>
+  <md-card-content layout="row" layout-align="center center">
 
-    </md-card-content>
+    <md-card-actions>
 
-  </md-card>
+      <md-button class="md-raised" ng-repeat="activity in deliverable.activities | orderBy:'step'" ng-class="{'btn-todo': activity.progress == '0' , 'btn-inprogress': activity.progress == '1', 'btn-done': activity.progress == '2'}" ng-click="activity.progress == '1'">
+        {{ activity.name }}
+      </md-button>
+
+    </md-card-actions>
+
+  </md-card-content>
+
+</md-card>
 
 <!--<div ng-repeat="activity in deliverable.activities">
         <h3>{{ activity.name }}</h3>

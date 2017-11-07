@@ -7,6 +7,10 @@ const bindings = {
   sbModel: '<',
 };
 
+function changeProgress() {
+  activity.progress = 1;
+}
+
 export const processMatrixComponent = {
   controller: ProcessMatrixController,
   template: componentTemplate,
