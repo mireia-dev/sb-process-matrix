@@ -9,7 +9,7 @@
     <md-card-content layout="row" layout-align="space-between">
 
       <section layout="row" layout-align="center center">
-        <md-button class="md-raised" ng-repeat="activity in deliverable.activities"  ng-class="{'btn-todo': activity.progress == '0' , 'btn-inprogress': activity.progress == '1', 'btn-done': activity.progress == '2'}" onclick="changeProgress()">
+        <md-button class="md-raised" ng-repeat="activity in deliverable.activities | orderBy:'step'" ng-class="{'btn-todo': activity.progress == '0' , 'btn-inprogress': activity.progress == '1', 'btn-done': activity.progress == '2'}">
           {{ activity.name }}
         </md-button>
       </section>
